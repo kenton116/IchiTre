@@ -61,9 +61,9 @@ function previewAnswerFile(file) {
 trainingButton.onclick = () => {
 }
 
-for (let i = 0; i = localStorage.length; i++) {
+for (let i = 1; i <= localStorage.length; i++) {
   const data = localStorage.getItem(i);
   const array = JSON.parse(data);
   console.log(array);
-  console.log(i)
+  
 }
