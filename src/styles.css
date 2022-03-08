@@ -1,7 +1,11 @@
-.new-area-close {
+.area-close {
   display: none;
 }
 
-.new-area-open {
+.area-open {
   display: block;
+}
+
+.mondai-div {
+  display: flex;
 }

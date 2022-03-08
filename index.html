@@ -17,20 +17,21 @@
       <li><a href="#training">トレーニング</a></li>
     </nav>
   </header>
-  <main>
+  <main id="main">
     <div>
       <h1 id="new">問題の新規作成</h1>
       <button id="mondai-button">新規作成</a></button>
-      <div id="new-area" class="new-area-close">
+      <div id="new-area" class="area-close">
         <h1>問題の新規作成</h1>
           <h3><label for="title">タイトル</label></h3>
             <input type="text" id="title" placeholder="問題の名前を入力">
           <h3><label for="question">問題</label></h3>
             <input type="file" accept="image/*" id="question" capture="camera" onchange="previewQuestionFile(this)">
-            <img id="question-preview" width="300px">
+            <img id="question-preview">
           <h3><label for="answer">答え</label></h3>
             <input type="file" accept="image/*" id="answer" capture="camera" onchange="previewAnswerFile(this)">
-            <img id="answer-preview" width="300px">
+            <img id="answer-preview">
+          <h3><a href="">キャンセル</a></h3>
           <h3><label for="subject">教科</label></h3>
             <input type="text" id="subject">
           <button id="create-mondai">問題を作成</button>
@@ -38,11 +39,24 @@
     </div>
     <div>
       <h1 id="mondai">問題一覧</h1>
+      <button id="mondai-reset">全てのデータを削除</button>
       <div id="mondai-area"></div>
     </div>
     <div>
       <h1 id="training">トレーニング</h1>
       <button id="training-button">トレーニングを始める</button>
+      <div id="training-area" class="area-close">
+        <h1>トレーニング</h1>
+        <div id="training-mondai">
+          <h1 id="show-title"></h3>
+            <img id="show-question">
+            <p id="show-subject"></p>
+            <p id="show-createdAt"></p>
+            <button id="show-answer-button">答えを見る</button>
+            <img id="show-answer">
+        </div>
+        <h3><a href="">キャンセル</a></h3>
+      </div>
     </div>
   </main>
   <footer>
