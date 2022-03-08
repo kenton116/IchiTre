@@ -36,26 +36,30 @@ function previewAnswerFile(file) {
   answerReader.readAsDataURL(file.files[0]);
 }
 
-function training(random) {
+function training() {
+  const random = Math.floor( Math.random() * (localStorage.length - 1 + 1)) + 1;
   const mondai = localStorage.getItem(random);
   const array = JSON.parse(mondai);
   console.log(array);
   titleShow.innerText = array.title;
   questionShow.src = array.question;
+  answerShow.src = '';
   subjectShow.innerText = array.subject;
   createdAtShow.innerText = array.createdAt;
   answerShowButton.className = 'area-open';
-
   answerShowButton.onclick = () => {
     answerShow.src = array.answer;
     answerShowButton.className = 'area-close';
     setTimeout(function() {
+      training()
     }, 10000)
   }
 }
 
+
 mondaiButton.onclick = () => {
   newArea.className = 'area-open';
+  mondaiButton.className = 'area-close';
 }
 
 mondaiResetButton.onclick = () => {
@@ -100,25 +104,8 @@ createMondaiButton.onclick = () => {
 
 trainingButton.onclick = () => {
   trainingArea.className = 'area-open';
-  let randoms = [];
-  let min = 1, max = localStorage.length;
-  let i = 1;
-
-  function intRandom(min, max){
-    return Math.floor( Math.random() * (max - min + 1)) + min;
-  }
-
-  for(i = min; i <= max; i++){
-    while(true){
-      var tmp = intRandom(min, max);
-      if(!randoms.includes(tmp)){
-        randoms.push(tmp);
-        console.log(tmp);
-        training(tmp);
-        break;
-      }
-    }
-  }
+  trainingButton.className = 'area-close';
+  training();
 }
 
 window.onload = function() {
