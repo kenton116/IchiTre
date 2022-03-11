@@ -1,3 +1,8 @@
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
 .area-close {
   display: none;
 }
@@ -6,16 +11,11 @@
   display: block;
 }
 
-.mondai-area-top {
-  display: flex;
-}
-
-.mondai-area-top h3 {
+#mondai-area-top h3 {
   margin-right: 5px;
 }
 
 .mondai-div {
-  display: flex;
   width: auto;
   height: auto;
   text-align: center;
@@ -30,7 +30,6 @@ a {
 }
 
 header {
-  display: flex;
   background-color: azure;
   padding: 10px;
 }
@@ -48,13 +47,9 @@ header li a {
   margin-left: 3px;
 }
 
-header p, header nav {
+header nav {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-header p {
-  margin-left: 3px;
 }
 
 .button {
@@ -90,3 +85,23 @@ img {
   width: 100px;
 }
 
+tr {
+  height: 100px;
+}
+
+th,td {
+  width: 100px;
+}
+
+th,td {
+  border: solid 1px;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}

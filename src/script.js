@@ -1,7 +1,7 @@
 'use strict';
 const mondaiButton = document.getElementById('mondai-button');
 const createMondaiButton = document.getElementById('create-mondai');
-const mondaiArea = document.getElementById('mondai-area');
+const mondaiAreaTop = document.getElementById('mondai-area-top');
 const questionInput = document.getElementById('question');
 const answerInput = document.getElementById('answer');
 const titleInput = document.getElementById('title');
@@ -52,7 +52,7 @@ function training() {
     answerShowButton.className = 'area-close';
     setTimeout(function() {
       training()
-    }, 10000)
+    }, 15000)
   }
 }
 
@@ -113,6 +113,6 @@ window.onload = function() {
     const mondai = localStorage.getItem(i);
     const array = JSON.parse(mondai);
     console.log(array);
-    mondaiArea.insertAdjacentHTML('afterbegin', '<div class="mondai-div"><h3 class="mondai-title">' + array.title + '</h3><img src="' + array.question + '" class="thumbnail"><img src="' + array.answer + '" class="thumbnail"><p class="mondai-subject">' + array.subject + '</p><p class="mondai-createdat">' + array.createdAt + '</p></div>');
+    mondaiAreaTop.insertAdjacentHTML('beforeend', '<tr class="mondai-div"><td class="mondai-title">' + array.title + '</td><td><img src="' + array.question + '" class="thumbnail"></td><td><img src="' + array.answer + '" class="thumbnail"></td><td><p class="mondai-subject">' + array.subject + '</p></td><td><p class="mondai-createdat">' + array.createdAt + '</p></td><td><button onclick="localStorage.removeItem(' + i + ');location.reload();" class="button">問題を削除</button></td></tr>');
   }
 }

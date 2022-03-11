@@ -5,12 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <title>いちトレ</title>
 </head>
 <body>
   <header>
     <h1>いちトレ</h1>
-    <p>一問一答トレーニングサービス</p>
     <nav>
       <li><a href="#new">問題の新規作成</a></li>
       <li><a href="#mondai">問題一覧</a></li>
@@ -40,14 +42,16 @@
     <div>
       <h1 id="mondai">問題一覧</h1>
       <button id="mondai-reset" class="button">全てのデータを削除</button>
-      <div class="mondai-area-top">
-        <h3>問題名</h3>
-        <h3>問題</h3>
-        <h3>問題の答え</h3>
-        <h3>教科</h3>
-        <h3>作成日</h3>
-      </div>
-      <div id="mondai-area"></div>
+      <table id="mondai-area-top">
+        <tr>
+          <th>問題名</th>
+          <th>問題</th>
+          <th>問題の答え</th>
+          <th>教科</th>
+          <th>作成日</th>
+          <th></th>
+        </tr>
+      </table>
     </div>
     <div>
       <h1 id="training">トレーニング</h1>
