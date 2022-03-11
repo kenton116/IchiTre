@@ -46,7 +46,7 @@ function training() {
   answerShow.src = '';
   subjectShow.innerText = array.subject;
   createdAtShow.innerText = array.createdAt;
-  answerShowButton.className = 'area-open';
+  answerShowButton.className = 'area-open button';
   answerShowButton.onclick = () => {
     answerShow.src = array.answer;
     answerShowButton.className = 'area-close';
@@ -113,6 +113,6 @@ window.onload = function() {
     const mondai = localStorage.getItem(i);
     const array = JSON.parse(mondai);
     console.log(array);
-    mondaiArea.insertAdjacentHTML('afterbegin', '<div class="mondai-div"><h3 class="mondai-title">' + array.title + '</h3><p class="mondai-subject">' + array.subject + '</p><p class="mondai-createdat">' + array.createdAt + '</p></div>');
+    mondaiArea.insertAdjacentHTML('afterbegin', '<div class="mondai-div"><h3 class="mondai-title">' + array.title + '</h3><img src="' + array.question + '" class="thumbnail"><img src="' + array.answer + '" class="thumbnail"><p class="mondai-subject">' + array.subject + '</p><p class="mondai-createdat">' + array.createdAt + '</p></div>');
   }
 }
